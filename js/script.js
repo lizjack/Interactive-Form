@@ -8,10 +8,10 @@ otherTextBox.hidden = true;
  * make it appear when selected
  * 
  */
-choices.addEventListener('change', () => {
-    if (choices.options[5].selected) {
-    otherTextBox.style.display ='block'; 
-    } else {
+choices.addEventListener('change', (event) => {
+    if (event.target.value === 'other') {
+    otherTextBox.hidden = false; 
+    } if (event.target.value !== 'other') {
         otherTextBox.hidden = true;
     }
 });
