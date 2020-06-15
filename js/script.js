@@ -36,16 +36,16 @@ shirtLabel.textContent='Please Select a t-shirt theme';
 const shirtColors = colorMenu.children;
 const jsPuns = design[1];
 const heartShirt = design[2];
+colorMenu.hidden = true;
 
 design.addEventListener('change', (event) => {
     for (var i = 0; i < shirtColors.length; i++) {
-      console.log(shirtColors[i]);
-      console.log(event.target.value);
       if (event.target.value === 'js puns') {
         shirtColors[0].selected = true;
         if (shirtColors[i].innerHTML.includes('JS Puns')) {
           shirtColors[i].style.display = '';
           shirtLabel.textContent='Color:';
+          colorMenu.hidden = false;
         } else {
           shirtColors[i].style.display = 'none';
         }
@@ -54,6 +54,7 @@ design.addEventListener('change', (event) => {
           if (shirtColors[i].innerHTML.includes('♥ JS')) {
               shirtColors[i].style.display = '';
               shirtLabel.textContent='Color:';
+              colorMenu.hidden = false;
           } else {
               shirtColors[i].style.display = 'none';
           }
@@ -61,3 +62,4 @@ design.addEventListener('change', (event) => {
     }
   });
 
+//learn how to hide the color dropdown menu
