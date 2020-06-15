@@ -17,6 +17,9 @@ choices.addEventListener('change', (event) => {
 });
 
 /***** TSHIRT SECTION *****/
+
+
+
  /** Update the "Color" Field to read "Please Select a t-shirt theme" 
   * Hide the colors in the "Color" drop down menu.
   * */
@@ -28,25 +31,30 @@ choices.addEventListener('change', (event) => {
  //Hide colors in the Color: menu
  const colorMenu = document.getElementById("color");
  const shirtLabel = document.querySelector('label[for="color"]');
- shirtLabel.textContent='Please Select a t-shirt theme';
+shirtLabel.textContent='Please Select a t-shirt theme';
  //Create variables for the Color: menu options
 const shirtColors = colorMenu.children;
 const jsPuns = design[1];
 const heartShirt = design[2];
 
-//find a way to loop this but at very least, find a way to 
-//be able to click between the options, like the first handler
 design.addEventListener('change', (event) => {
-    if (jsPuns.selected === true) {
-   colorMenu.options[3].hidden = true; 
-   colorMenu.options[4].hidden = true; 
-   colorMenu.options[5].hidden = true; 
+    for (var i = 0; i < shirtColors.length; i++) {
+      console.log(shirtColors[i]);
+      console.log(event.target.value);
+      if (event.target.value === 'js puns') {
+        if (shirtColors[i].innerHTML.includes('JS Puns')) {
+          shirtColors[i].style.display = '';
+          shirtLabel.textContent='Color:';
+        } else {
+          shirtColors[i].style.display = 'none';
+        }
+      } else if (event.target.value === 'heart js') {
+          if (shirtColors[i].innerHTML.includes('♥ JS')) {
+              shirtColors[i].style.display = '';
+              shirtLabel.textContent='Color:';
+          } else {
+              shirtColors[i].style.display = 'none';
+          }
+      }
     }
-}); 
- design.addEventListener('change', (event) => {
-     if (heartShirt.selected === true) {
-        colorMenu.options[0].hidden = true; 
-        colorMenu.options[1].hidden = true; 
-        colorMenu.options[2].hidden = true; 
-     }
- });
+  });
