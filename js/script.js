@@ -47,37 +47,3 @@ design.addEventListener('change', (event) => {
          }
 });
 
-
-//Add an event listener so the shirt colors correspond with the designs.
-design.addEventListener('change', (event) => {
-    //if (user clicks on JS Puns design) {
-        //then 3 shirt themes pop up, they are hidden=false;
-    //} if (user clicks on i heart js design) {
-    // then 3 different themes pop up, they are hidden=false;  
-   // } 
-});
-
-
-/**<div>
-<label for="design">Design:</label>
-<select id="design" name="user-design">
-  <option>Select Theme</option>
-  <option value="js puns">Theme - JS Puns</option>
-  <option value="heart js">Theme - I &#9829; JS</option>
-</select>
-</div>
-
-<div id="colors-js-puns" class="">
-<label for="color">Color:</label>
-<select id="color">
-  <option value="cornflowerblue">Cornflower Blue (JS Puns shirt only)</option>
-  <option value="darkslategrey">Dark Slate Grey (JS Puns shirt only)</option> 
-  <option value="gold">Gold (JS Puns shirt only)</option> 
-  <option value="tomato">Tomato (I &#9829; JS shirt only)</option>
-  <option value="steelblue">Steel Blue (I &#9829; JS shirt only)</option> 
-  <option value="dimgrey">Dim Grey (I &#9829; JS shirt only)</option> 
-</select>
-</div>
-</div>               
-</fieldset> **/ 
-
