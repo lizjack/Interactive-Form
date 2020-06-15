@@ -1,3 +1,4 @@
+//Autofocus on the name textbox
 document.getElementById("name").focus();
 
 const otherTextBox = document.getElementById("other-title");
@@ -17,12 +18,6 @@ choices.addEventListener('change', (event) => {
 });
 
 /***** TSHIRT SECTION *****/
-
-
-
- /** Update the "Color" Field to read "Please Select a t-shirt theme" 
-  * Hide the colors in the "Color" drop down menu.
-  * */
  
   //Hide Select Theme option in Design: menu
  const design = document.getElementById("design");
@@ -61,5 +56,15 @@ design.addEventListener('change', (event) => {
       }
     }
   });
+/***** ACTIVITY SECTION *****/
+//create a variable to store the checkboxes
+const checkboxes = document.querySelectorAll('.activities input');
 
-//learn how to hide the color dropdown menu
+document.querySelector('.activities').addEventListener('change', (e) => { 
+    const clicked = e.target;
+    const clickedType = clicked.getAttribute('data-day-and-time');
+    for (let i = 0; i < checkboxes.length; i ++) {
+        const checkboxType = checkboxes[i].getAttribute('data-day-and-time');
+            if (clickedType === checkboxType && checkboxType && clicked !== checkboxes[i])
+    }
+    });
