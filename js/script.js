@@ -28,22 +28,25 @@ choices.addEventListener('change', (event) => {
  //Hide colors in the Color: menu
  const colorMenu = document.getElementById("color");
  const shirtLabel = document.querySelector('label[for="color"]');
- //shirtLabel.textContent='Please Select a t-shirt theme';
- //colorMenu.hidden = true;
+ shirtLabel.textContent='Please Select a t-shirt theme';
  //Create variables for the Color: menu options
 const shirtColors = colorMenu.children;
 const jsPuns = design[1];
 const heartShirt = design[2];
 
+//find a way to loop this but at very least, find a way to 
+//be able to click between the options, like the first handler
 design.addEventListener('change', (event) => {
     if (jsPuns.selected === true) {
    colorMenu.options[3].hidden = true; 
    colorMenu.options[4].hidden = true; 
    colorMenu.options[5].hidden = true; 
-    } if (heartShirt.selected === true) {
+    }
+}); 
+ design.addEventListener('change', (event) => {
+     if (heartShirt.selected === true) {
         colorMenu.options[0].hidden = true; 
         colorMenu.options[1].hidden = true; 
         colorMenu.options[2].hidden = true; 
-         }
-});
-
+     }
+ });
