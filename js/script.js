@@ -42,6 +42,7 @@ design.addEventListener('change', (event) => {
       console.log(shirtColors[i]);
       console.log(event.target.value);
       if (event.target.value === 'js puns') {
+        shirtColors[0].selected = true;
         if (shirtColors[i].innerHTML.includes('JS Puns')) {
           shirtColors[i].style.display = '';
           shirtLabel.textContent='Color:';
@@ -49,6 +50,7 @@ design.addEventListener('change', (event) => {
           shirtColors[i].style.display = 'none';
         }
       } else if (event.target.value === 'heart js') {
+        shirtColors[3].selected = true;
           if (shirtColors[i].innerHTML.includes('♥ JS')) {
               shirtColors[i].style.display = '';
               shirtLabel.textContent='Color:';
@@ -58,3 +60,4 @@ design.addEventListener('change', (event) => {
       }
     }
   });
+
