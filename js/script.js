@@ -59,12 +59,24 @@ design.addEventListener('change', (event) => {
 /***** ACTIVITY SECTION *****/
 //create a variable to store the checkboxes
 const checkboxes = document.querySelectorAll('.activities input');
+const activitiesSection = document.querySelector('.activities');
+const activityCost = document.querySelectorAll('.data-cost');
+//loop the data-cost for the children of class .activities
+let priceTotal = document.createElement('input');
+activitiesSection.appendChild(priceTotal);
+priceTotal = 0;
 
 document.querySelector('.activities').addEventListener('change', (e) => { 
     const clicked = e.target;
     const clickedType = clicked.getAttribute('data-day-and-time');
     for (let i = 0; i < checkboxes.length; i ++) {
         const checkboxType = checkboxes[i].getAttribute('data-day-and-time');
-            if (clickedType === checkboxType && checkboxType && clicked !== checkboxes[i])
+        if (clickedType === checkboxType) {
+            if (clicked.checked) {
+                checkboxes[i].disabled = true;
+            } else {
+                checkboxes[i].disabled = false;
+            }
+        }
     }
     });
