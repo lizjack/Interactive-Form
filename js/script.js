@@ -57,6 +57,7 @@ design.addEventListener('change', (event) => {
     }
   });
 /***** ACTIVITY SECTION *****/
+
 //create a variable to store the checkboxes
 const checkboxes = document.querySelectorAll('.activities input');
 const activitiesSection = document.querySelector('.activities');
@@ -65,6 +66,7 @@ const activityCost = document.querySelectorAll('.data-cost');
 let priceTotalElement = document.createElement('textbox');
 let priceTotal = 0;
 
+//work on flexible checkbox options instead of locking up
 document.querySelector('.activities').addEventListener('change', (e) => { 
     const clicked = e.target;
     const clickedCost = parseInt(clicked.getAttribute('data-cost'));
@@ -79,12 +81,41 @@ document.querySelector('.activities').addEventListener('change', (e) => {
     const clickedType = clicked.getAttribute('data-day-and-time');
     for (let i = 0; i < checkboxes.length; i ++) {
         const sessionTime = checkboxes[i].getAttribute('data-day-and-time');
-        if (clickedType === sessionTime && clicked !== checkboxes) {
-            if (true) {
+        if (clickedType === sessionTime && clicked !== checkboxes[i]) {
+            if (clicked.checked) {
                 checkboxes[i].disabled = true;
             } else {
                 checkboxes[i].disabled = false;
             }
         }
+    }
+});
+
+/***** PAYMENT SECTION *****/
+
+const paymentMenu = document.getElementById('payment');
+paymentMenu.removeChild(paymentMenu[0]);
+
+const creditCard = document.getElementById('credit-card');
+const paypal = document.getElementById('paypal');
+const bitcoin = document.getElementById('bitcoin');
+paypal.style.display = 'none';
+bitcoin.style.display = 'none';
+//creditCard.style.display = 'none';
+
+paymentMenu.addEventListener('change', (event) => {
+    if (event.target.value === 'creditCard') {
+        creditCard.style.display = '';
+    } else {
+        creditCard.style.display = 'none';
+    } if (event.target.value === 'paypal') {
+        paypal.style.display = '';
+    } else {
+        paypal.style.display = 'none';
+    } 
+    if (event.target.value === 'bitcoin') {
+        bitcoin.style.display = '';
+    } else {
+        bitcoin.style.display = 'none';
     }
 });
