@@ -64,7 +64,6 @@ const activityCost = document.querySelectorAll('.data-cost');
 //loop the data-cost for the children of class .activities
 let priceTotalElement = document.createElement('textbox');
 let priceTotal = 0;
-//work on Listening for Changes in activity section, first line finished with clicked
 
 document.querySelector('.activities').addEventListener('change', (e) => { 
     const clicked = e.target;
@@ -89,17 +88,3 @@ document.querySelector('.activities').addEventListener('change', (e) => {
         }
     }
 });
-
-
-    /** const clickedType = clicked.getAttribute('data-day-and-time');
-    for (let i = 0; i < checkboxes.length; i ++) {
-        const sessionTime = checkboxes[i].getAttribute('data-day-and-time');
-        if (clickedType === sessionTime) {
-            if (clicked.checked) {
-                checkboxes[i].disabled = true;
-            } else {
-                checkboxes[i].disabled = false;
-            }
-        }
-    }
-    }); **/ 
