@@ -104,8 +104,8 @@ bitcoin.style.display = 'none';
 //creditCard.style.display = 'none';
 
 paymentMenu.addEventListener('change', (event) => {
-    if (event.target.value === 'creditCard') {
-        creditCard.style.display = 'block';
+    if (event.target.value === 'credit card') {
+        creditCard.style.display = '';
     } else {
         creditCard.style.display = 'none';
     } if (event.target.value === 'paypal') {
