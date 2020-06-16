@@ -62,16 +62,39 @@ const checkboxes = document.querySelectorAll('.activities input');
 const activitiesSection = document.querySelector('.activities');
 const activityCost = document.querySelectorAll('.data-cost');
 //loop the data-cost for the children of class .activities
-let priceTotal = document.createElement('input');
-activitiesSection.appendChild(priceTotal);
-priceTotal = 0;
+let priceTotalElement = document.createElement('textbox');
+let priceTotal = 0;
+//work on Listening for Changes in activity section, first line finished with clicked
 
 document.querySelector('.activities').addEventListener('change', (e) => { 
     const clicked = e.target;
+    const clickedCost = parseInt(clicked.getAttribute('data-cost'));
+    if (clicked.checked) {
+        priceTotal += clickedCost;
+    } else {
+          priceTotal -= clickedCost;
+    } console.log('Total: $' + priceTotal);
+    activitiesSection.appendChild(priceTotalElement);
+    priceTotalElement.innerHTML = 'Total: $' + priceTotal;
+
     const clickedType = clicked.getAttribute('data-day-and-time');
     for (let i = 0; i < checkboxes.length; i ++) {
-        const checkboxType = checkboxes[i].getAttribute('data-day-and-time');
-        if (clickedType === checkboxType) {
+        const sessionTime = checkboxes[i].getAttribute('data-day-and-time');
+        if (clickedType === sessionTime && clicked !== checkboxes) {
+            if (true) {
+                checkboxes[i].disabled = true;
+            } else {
+                checkboxes[i].disabled = false;
+            }
+        }
+    }
+});
+
+
+    /** const clickedType = clicked.getAttribute('data-day-and-time');
+    for (let i = 0; i < checkboxes.length; i ++) {
+        const sessionTime = checkboxes[i].getAttribute('data-day-and-time');
+        if (clickedType === sessionTime) {
             if (clicked.checked) {
                 checkboxes[i].disabled = true;
             } else {
@@ -79,4 +102,4 @@ document.querySelector('.activities').addEventListener('change', (e) => {
             }
         }
     }
-    });
+    }); **/ 
