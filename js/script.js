@@ -120,3 +120,55 @@ paymentMenu.addEventListener('change', (event) => {
     }
 });
 
+/***** Form Validation Section *****/
+
+const name = document.querySelector("#name"); 
+const email = document.querySelector("#mail");
+
+ const nameValidation = () => {
+    const nameValue = name.value; 
+    if (nameValue <= 0) {
+      name.style.borderColor = "red";
+      return false;  
+    } else {
+        name.style.borderColor = "white";
+        return true;
+    }
+}
+
+document.addEventListener('submit', (e) => {
+   if (!nameValidation()) {
+       e.preventDefault();
+       console.log('testing name validation function')
+   }
+});
+
+
+ /** function emailValidation() {
+    const emailValue = email.value;
+    const emailRegex = //findemailregex
+    const checkEmail = emailRegex.test(emailValue);
+    // if (emailValue !== emailRegex) { (if (!checkEmail)?)
+      email.style.borderColor = "red";
+      return false;
+    } else {
+        email.style.borderColor = "white";
+        return true;
+    }
+}
+
+function activitiesValidation() {
+
+}
+
+function creditCardValidation() {
+
+}
+
+function zipCodeValidation() {
+
+}
+
+function cvvValidation () {
+
+} **/
