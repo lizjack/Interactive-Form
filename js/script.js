@@ -17,7 +17,7 @@ choices.addEventListener('change', (event) => {
     }
 });
 
-/***** TSHIRT SECTION *****/
+/***** T-shirt Section *****/
  
   //Hide Select Theme option in Design: menu
  const design = document.getElementById("design");
@@ -56,7 +56,8 @@ design.addEventListener('change', (event) => {
       }
     }
   });
-/***** ACTIVITY SECTION *****/
+
+/***** Activity Section *****/
 
 //create a variable to store the checkboxes
 const checkboxes = document.querySelectorAll('.activities input');
@@ -91,7 +92,7 @@ document.querySelector('.activities').addEventListener('change', (e) => {
     }
 });
 
-/***** PAYMENT SECTION *****/
+/***** Payment Section*****/
 
 const paymentMenu = document.getElementById('payment');
 paymentMenu.removeChild(paymentMenu[0]);
@@ -149,20 +150,36 @@ const email = document.querySelector("#mail");
     }
 }
 
- function activitiesValidation() {
-   //figure out how to turn red
-    if (activitiesSection.children.clicked) {
-        activitiesSection.style.bcolor = "white";
-        return true;
-    } else {
-        activitiesSection.style.borderColor = "red";
+//work out this function
+  function activitiesValidation() {
+    const activitiesBoxes = document.querySelectorAll('.activities input');
+    let checkedBoxes = 0;
+    for (let i = 0; i < activitiesBoxes.length; i ++) {
+        if (activitiesBoxes[i].checked) {
+            checkedBoxes += 1;
+        } if (checkedBoxes === 0) {
+            name.style.borderColor = "red";
+            return false;
+        } if (checkedBoxes > 0) {
+            return true;
+        }
+    } 
+
+
+
+ function creditCardValidation() {
+    const creditNumber = document.getElementById('cc-num');
+    const creditInput = creditNumber.value;
+    const creditRegex = /^[0-9]{13,16}$/;
+    const checkCredit = creditRegex.test(creditInput);
+    if (!checkCredit) {
+        creditNumber.style.borderColor = "red";
         return false;
+    } else {
+        creditNumber.style.borderColor = "white";
+        return true;
     }
-}
-
-/** function creditCardValidation() {
-
-} **/
+} 
 
 function zipCodeValidation() {
     const zipCode = document.getElementById('zip');
@@ -191,3 +208,10 @@ function cvvValidation() {
         return true;
     }
 }
+
+document.addEventListener('submit', (e) => {
+    if (!activitiesValidation()) {
+        e.preventDefault();
+        console.log('testing activities validation function');
+    }
+ }); 
