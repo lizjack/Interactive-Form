@@ -135,20 +135,11 @@ const email = document.querySelector("#mail");
         return true;
     }
 }
-
-document.addEventListener('submit', (e) => {
-   if (!nameValidation()) {
-       e.preventDefault();
-       console.log('testing name validation function')
-   }
-});
-
-
- /** function emailValidation() {
+ function emailValidation() {
     const emailValue = email.value;
-    const emailRegex = //findemailregex
+    const emailRegex = //findemailRegex ;
     const checkEmail = emailRegex.test(emailValue);
-    // if (emailValue !== emailRegex) { (if (!checkEmail)?)
+     if (!checkEmail) { 
       email.style.borderColor = "red";
       return false;
     } else {
@@ -157,7 +148,9 @@ document.addEventListener('submit', (e) => {
     }
 }
 
-function activitiesValidation() {
+
+
+/** function activitiesValidation() {
 
 }
 
