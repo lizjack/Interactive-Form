@@ -125,7 +125,7 @@ paymentMenu.addEventListener('change', (event) => {
 const name = document.querySelector("#name"); 
 const email = document.querySelector("#mail");
 
- const nameValidation = () => {
+ function nameValidation() {
     const nameValue = name.value; 
     if (nameValue <= 0) {
       name.style.borderColor = "red";
@@ -135,9 +135,10 @@ const email = document.querySelector("#mail");
         return true;
     }
 }
+
  function emailValidation() {
     const emailValue = email.value;
-    const emailRegex = //findemailRegex ;
+    const emailRegex = /^[^@]+@[^@.]+\.[a-z]+$/i ;
     const checkEmail = emailRegex.test(emailValue);
      if (!checkEmail) { 
       email.style.borderColor = "red";
@@ -148,20 +149,45 @@ const email = document.querySelector("#mail");
     }
 }
 
-
-
-/** function activitiesValidation() {
-
+ function activitiesValidation() {
+   //figure out how to turn red
+    if (activitiesSection.children.clicked) {
+        activitiesSection.style.bcolor = "white";
+        return true;
+    } else {
+        activitiesSection.style.borderColor = "red";
+        return false;
+    }
 }
 
-function creditCardValidation() {
-
-}
-
-function zipCodeValidation() {
-
-}
-
-function cvvValidation () {
+/** function creditCardValidation() {
 
 } **/
+
+function zipCodeValidation() {
+    const zipCode = document.getElementById('zip');
+    const zipCodeValue = zipCode.value;
+    const zipRegex = /^[0-9]{5}$/
+    const checkZip = zipRegex.test(zipCodeValue);
+    if (!checkZip) {
+        zipCode.style.borderColor = "red";
+        return false;
+    } else {
+        zipCode.style.borderColor = "white";
+        return true;
+    }
+}
+
+function cvvValidation() {
+    const cvv = document.getElementById('cvv');
+    const cvvValue = cvv.value;
+    const ccvRegex = /^[0-9]{3}$/;
+    const checkCvv = ccvRegex.test(cvvValue); 
+    if (!checkCvv) {
+        cvv.style.borderColor = "red";
+        return false;
+    } else {
+        cvv.style.borderColor = "white";
+        return true;
+    }
+}
