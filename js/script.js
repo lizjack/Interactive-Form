@@ -63,11 +63,9 @@ design.addEventListener('change', (event) => {
 const checkboxes = document.querySelectorAll('.activities input');
 const activitiesSection = document.querySelector('.activities');
 const activityCost = document.querySelectorAll('.data-cost');
-//loop the data-cost for the children of class .activities
 let priceTotalElement = document.createElement('textbox');
 let priceTotal = 0;
 
-//work on flexible checkbox options instead of locking up
 document.querySelector('.activities').addEventListener('change', (e) => { 
     const clicked = e.target;
     const clickedCost = parseInt(clicked.getAttribute('data-cost'));
@@ -150,7 +148,6 @@ const email = document.querySelector("#mail");
     }
 }
 
-//work out this function
    function activitiesValidation() {
     const activitiesBoxes = document.querySelectorAll('.activities input');
     const legend = document.querySelector('.activities legend')
@@ -158,7 +155,7 @@ const email = document.querySelector("#mail");
     for (let i = 0; i < activitiesBoxes.length; i ++) {
         if (activitiesBoxes[i].checked) {
             checkedBoxes += 1;
-        } if (checkedBoxes === 0) {
+        } if (checkedBoxes < 0) {
             legend.style.color = "red";
             return false;
         } if (checkedBoxes > 0) {
@@ -166,9 +163,6 @@ const email = document.querySelector("#mail");
         }
      }  
    }
-   
-
-
 
  function creditCardValidation() {
     const creditNumber = document.getElementById('cc-num');
@@ -227,17 +221,17 @@ function cvvValidation() {
     e.preventDefault();
     } 
 
-    if (paymentMenu[1].selected) {
+    if (paymentMenu[0].selected) {
     (!creditCardValidation()) 
     e.preventDefault();
     } 
 
-    if (paymentMenu[1].selected) {
+    if (paymentMenu[0].selected) {
     (!cvvValidation()) 
     e.preventDefault();
     }
 
-    if (paymentMenu[1].selected) {
+    if (paymentMenu[0].selected) {
     (!zipCodeValidation()) 
     e.preventDefault();
     } 
