@@ -151,19 +151,20 @@ const email = document.querySelector("#mail");
 }
 
 //work out this function
-  function activitiesValidation() {
+   function activitiesValidation() {
     const activitiesBoxes = document.querySelectorAll('.activities input');
+    const legend = document.querySelector('.activities legend')
     let checkedBoxes = 0;
     for (let i = 0; i < activitiesBoxes.length; i ++) {
         if (activitiesBoxes[i].checked) {
             checkedBoxes += 1;
         } if (checkedBoxes === 0) {
-            name.style.borderColor = "red";
+            legend.style.color = "red";
             return false;
         } if (checkedBoxes > 0) {
             return true;
         }
-     }  
+     }   
 
 
 
