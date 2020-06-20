@@ -163,7 +163,7 @@ const email = document.querySelector("#mail");
         } if (checkedBoxes > 0) {
             return true;
         }
-    } 
+     }  
 
 
 
@@ -209,9 +209,3 @@ function cvvValidation() {
     }
 }
 
-document.addEventListener('submit', (e) => {
-    if (!activitiesValidation()) {
-        e.preventDefault();
-        console.log('testing activities validation function');
-    }
- }); 
