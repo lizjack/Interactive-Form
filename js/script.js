@@ -164,7 +164,9 @@ const email = document.querySelector("#mail");
         } if (checkedBoxes > 0) {
             return true;
         }
-     }   
+     }  
+   }
+   
 
 
 
@@ -210,3 +212,40 @@ function cvvValidation() {
     }
 }
 
+ document.addEventListener('submit', (e) => {
+    if (!nameValidation()) {
+    e.preventDefault();
+    }
+});
+
+document.addEventListener('submit', (e) => {
+    if (!emailValidation()) {
+    e.preventDefault();
+    document.documentElement.scrollTop = 0
+    }
+});
+
+
+ document.addEventListener('submit', (e) => {
+    if (!activitiesValidation()) {
+    e.preventDefault();
+    }
+}); 
+
+  document.addEventListener('submit', (e) => {
+    if (!creditCardValidation()) {
+    e.preventDefault();
+    }
+}); 
+
+ document.addEventListener('submit', (e) => {
+    if (!cvvValidation()) {
+    e.preventDefault();
+    }
+});
+
+ document.addEventListener('submit', (e) => {
+    if (!zipCodeValidation()) {
+    e.preventDefault();
+    }
+}); 
