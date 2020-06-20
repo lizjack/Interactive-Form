@@ -215,37 +215,30 @@ function cvvValidation() {
  document.addEventListener('submit', (e) => {
     if (!nameValidation()) {
     e.preventDefault();
+    document.documentElement.scrollTop = 0;
     }
-});
 
-document.addEventListener('submit', (e) => {
     if (!emailValidation()) {
     e.preventDefault();
-    document.documentElement.scrollTop = 0
+    document.documentElement.scrollTop = 0;
     }
-});
 
-
- document.addEventListener('submit', (e) => {
     if (!activitiesValidation()) {
     e.preventDefault();
-    }
-}); 
+    } 
 
-  document.addEventListener('submit', (e) => {
-    if (!creditCardValidation()) {
+    if (paymentMenu[1].selected) {
+    (!creditCardValidation()) 
+    e.preventDefault();
+    } 
+
+    if (paymentMenu[1].selected) {
+    (!cvvValidation()) 
     e.preventDefault();
     }
-}); 
 
- document.addEventListener('submit', (e) => {
-    if (!cvvValidation()) {
+    if (paymentMenu[1].selected) {
+    (!zipCodeValidation()) 
     e.preventDefault();
-    }
-});
-
- document.addEventListener('submit', (e) => {
-    if (!zipCodeValidation()) {
-    e.preventDefault();
-    }
+    } 
 }); 
