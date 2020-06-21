@@ -172,8 +172,7 @@ const email = document.querySelector("#mail");
         } if (checkedBoxes > 0) {
             return true;
         }
-      }   
-    
+      }     
 //create a function that validates credit card input has 13-16 number characters
  function creditCardValidation() {
     const creditNumber = document.getElementById('cc-num');
