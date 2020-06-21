@@ -132,7 +132,7 @@ const email = document.querySelector("#mail");
 //create a function that validates user name and alerts user if input is incompatible
  function nameValidation() {
     const nameValue = name.value; 
-    const nameRegex = /^[a-z]+$/i;
+    const nameRegex = /^[a-z]+\s[a-z]+$/i;
     const checkName = nameRegex.test(nameValue);
     if (!checkName) {
       name.style.borderColor = "red";
