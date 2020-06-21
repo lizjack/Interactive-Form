@@ -201,7 +201,7 @@ function zipCodeValidation() {
         zipCode.style.borderColor = "white";
         return true;
     }
-}
+} 
 
 //create a function that validates cvv input has 3 characters
 function cvvValidation() {

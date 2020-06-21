@@ -1,2 +1,3 @@
 # Interactive Form
  Techdegree Project Three
+The Interactive Form project uses regular expressions to validate user input for multiple fields. Inaccurate input will be highlighted in red and the form will be prevented from submitting until the input is corrected. Event listeners throughout the code hide/display corresponding options depending on user action. In the Activities section, users cannot register for sessions that occur at the same time. 
