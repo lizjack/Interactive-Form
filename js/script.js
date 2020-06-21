@@ -73,7 +73,7 @@ document.querySelector('.activities').addEventListener('change', (e) => {
         priceTotal += clickedCost;
     } else {
           priceTotal -= clickedCost;
-    } console.log('Total: $' + priceTotal);
+    }
     activitiesSection.appendChild(priceTotalElement);
     priceTotalElement.innerHTML = 'Total: $' + priceTotal;
 
@@ -147,22 +147,21 @@ const email = document.querySelector("#mail");
         return true;
     }
 }
-
-   function activitiesValidation() {
+    function activitiesValidation() {
     const activitiesBoxes = document.querySelectorAll('.activities input');
-    const legend = document.querySelector('.activities legend')
+    const legend = document.querySelector('.activities legend');
     let checkedBoxes = 0;
     for (let i = 0; i < activitiesBoxes.length; i ++) {
         if (activitiesBoxes[i].checked) {
             checkedBoxes += 1;
-        } if (checkedBoxes < 0) {
+        } if (checkedBoxes === 0) {
             legend.style.color = "red";
             return false;
         } if (checkedBoxes > 0) {
             return true;
         }
-     }  
-   }
+      }   
+    } 
 
  function creditCardValidation() {
     const creditNumber = document.getElementById('cc-num');
@@ -235,4 +234,7 @@ function cvvValidation() {
     (!zipCodeValidation()) 
     e.preventDefault();
     } 
-}); 
+});
+
+//credit card validation not working
+//main conference needs to be checked for form to go thru
